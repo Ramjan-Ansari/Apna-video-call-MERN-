@@ -1,0 +1,121 @@
+.meetVideoContiner{
+    position: relative;
+    height: 100vh;
+    background: rgb(1, 4, 48);
+}
+
+.meetUserVideo{
+    position: absolute;
+    bottom: 10vh;
+    height: 20vh;
+    width: auto;
+    left: 0;
+    border-radius: 20px;
+}
+
+.btnContainer{
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    text-align: center;
+}
+
+.btnContainer svg {
+    font-size: 3rem;
+    color: white;
+}
+
+.conferenceView{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+}
+
+.conferenceView  video {
+    width: 10vw;
+    height: auto;
+    min-width: 30vw;
+    border-radius: 10px;
+}
+
+
+
+.lobbyVideo{
+    margin-top: 10px;
+}
+
+
+
+
+/* ----chat box-------- */
+.chatRoom{
+    position: absolute;
+    height: 90vh;
+    width: 30vw;
+    right: 0;
+    background:#fff;
+    border-radius: 10px;
+    bottom: 10vh;
+    padding-inline: 20px;
+}
+
+.chatContainer{
+    position: relative;
+    height: 100%;
+}
+
+/* .chattingDisplay{
+
+} */
+
+.chatingArea{
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btnc{
+    padding: 14px;
+}
+
+
+@media (max-width: 768px){
+    .lobbyContainer{
+        margin: 10px;
+    }
+    .lobbyContainer h2{
+        margin: 10px 10px;
+    }
+    .lobbyVideo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .lobbyVideo video{
+        width: 90vw;
+        height: auto;
+    }
+    .chatRoom{
+        height: 70vh;
+        width: 50vw;
+    }
+    .chatRoom{
+        z-index: 99;
+    }
+    .chatContainer h1{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .conferenceView{
+        flex-wrap: wrap;
+    }
+    .conferenceView  video{
+        width: 80vw;
+        height: auto;
+    }
+}
+
