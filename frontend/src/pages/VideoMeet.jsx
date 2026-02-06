@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import io from "socket.io-client";
-import '../style/videoMeet.css';
+import style from '../style/videoMeet.module.css';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Badge from "@mui/material/Badge"
@@ -442,27 +442,27 @@ const VideoMeet = () => {
   return (
     <div>
         {askForUsername === true? 
-        <div className='lobbyContainer'>
+        <div className={style.lobbyContainer}>
 
           <h2>Enter into lobby</h2>
           <TextField id="outlined-basic" label="username" value={username} onChange={(e)=>setUsername(e.target.value)} variant="outlined" />
           <Button variant="outlined" style={{padding: "14px", marginLeft: "2px"}}   onClick={connect} >Connect</Button>
-          <div className='lobbyVideo'>
+          <div className={style.lobbyVideo}>
             <video ref={ localVideoRef } autoPlay muted></video>
           </div>
 
         </div> : 
         
-        <div className='meetVideoContiner'>
+        <div className={style.meetVideoContiner} >
 
           {/* -----chat box----------- */}
 
           {showModel? 
-          <div  className="chatRoom">
-            <div className="chatContainer">
+          <div  className={style.chatRoom}>
+            <div className={style.chatContainer}>
               <h1>Chat</h1>
 
-              <div className="chattingDisplay">
+              <div className={style.chattingDisplay}>
 
                 {messages.length > 0 ? messages.map((item, index)=>{
                   return (
@@ -475,7 +475,7 @@ const VideoMeet = () => {
 
               </div>
 
-              <div className="chatingArea">
+              <div className={style.chatingArea}>
                 <TextField value={message} onChange={(e)=>setMessage(e.target.value)} id='outline-basic' label='Enter Your Chat' variant="outlined" />
                 <Button style={{padding: "14px", marginLeft: "2px"}} onClick={sendMessage} variant='contained'>Send</Button>
               </div>
@@ -485,7 +485,7 @@ const VideoMeet = () => {
           :<></>}
 
 
-          <div className='btnContainer'>
+          <div className={style.btnContainer}>
             <IconButton onClick={handleVideo}>
               {(video === true ? <VideocamIcon /> : <VideocamOffIcon /> )}
             </IconButton>
@@ -509,8 +509,8 @@ const VideoMeet = () => {
             </Badge>
           </div>
 
-          <video className='meetUserVideo' ref={ localVideoRef } autoPlay muted></video>
-          <div className='conferenceView'>
+          <video className={style.meetUserVideo} ref={ localVideoRef } autoPlay muted></video>
+          <div className={style.conferenceView}>
           {videos.map((video) => (
               <div key={video.socketId} >
 
