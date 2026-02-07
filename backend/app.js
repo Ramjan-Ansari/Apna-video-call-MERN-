@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoute from "./routes/userRoutes.js"
-import Meeting from './models/meetingModel.js';
 import connectToSocket from './controllers/soketManager.js';
 
 dotenv.config();
@@ -20,7 +19,6 @@ app.use(express.urlencoded({limit: "40kb", extended: true}));
 app.use("/api/v1/users", userRoute);
 
 const start = async () => {
-    // const connectionDb = await mongoose.connect("mongodb+srv://ansariramjan179_db_user:LGEY6Y82A8sTWaRY@cluster0.mpwikpx.mongodb.net/");
     const connectionDb = await mongoose.connect(`${process.env.MONGO_URL}/Zoom-clone`);
     console.log(`mongo connnection DB host: ${connectionDb.connection.host}` )
     server.listen(app.get("port"), ()=>{
@@ -28,4 +26,3 @@ const start = async () => {
     })
 }
 start();
-
